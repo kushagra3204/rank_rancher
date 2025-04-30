@@ -1,0 +1,147 @@
+
+.seo-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seo-expert-svg {
+  overflow: visible;
+}
+
+/* Base circle styles */
+.logo-circle {
+  fill: #f1f0fb;
+  stroke: #9b87f5;
+  stroke-width: 2;
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+  transform-origin: center;
+}
+
+.animate-circle {
+  animation: circleAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes circleAnimation {
+  to {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg);
+  }
+}
+
+/* Chart lines */
+.chart-line {
+  stroke: #aaadb0;
+  stroke-width: 1;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  opacity: 0.5;
+}
+
+.animate-line {
+  animation: lineAnimation 1s ease-in-out forwards;
+}
+
+@keyframes lineAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Search icon */
+.search-circle {
+  fill: none;
+  stroke: #8B5CF6;
+  stroke-width: 5;
+}
+
+.search-handle {
+  stroke: #8B5CF6;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Growth line */
+.growth-line {
+  fill: none;
+  stroke: #0FA0CE;
+  stroke-width: 3;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke-linecap: round;
+}
+
+.animate-path {
+  animation: pathAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes pathAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Data points */
+.data-point {
+  fill: white;
+  stroke: #0FA0CE;
+  stroke-width: 2;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.point-1 {
+  animation-delay: 0.6s;
+}
+
+.point-2 {
+  animation-delay: 0.9s;
+}
+
+.point-3 {
+  animation-delay: 1.2s;
+}
+
+.point-4 {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Rating stars */
+.star {
+  fill: #FFD700;
+  opacity: 0;
+  animation: starFadeIn 0.3s ease-in-out forwards;
+}
+
+.star:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+.star:nth-child(2) {
+  animation-delay: 1.6s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 1.7s;
+}
+
+.star:nth-child(4) {
+  animation-delay: 1.8s;
+}
+
+.star:nth-child(5) {
+  animation-delay: 1.9s;
+}
+
+@keyframes starFadeIn {
+  to {
+    opacity: 1;
+  }
+}
