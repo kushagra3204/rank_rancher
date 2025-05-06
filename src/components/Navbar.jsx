@@ -5,7 +5,7 @@ import "../styles/components/Navbar.css"
 import { PhoneCall } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { rrseoLogo, rrseoSVGLogo } from "../assets";
+import { rrseoLogo, rrseoSVGLogo, rrseoSVGLogoLight } from "../assets";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -37,13 +37,11 @@ const Navbar = () => {
   }
 
   return (
-        
-
     <header className={`navbar ${scrolled ? "scrolled" : ""} ${theme}`}>
       <div className="container navbar-container">
         <div className="logo">
           <Link to="/">
-            <img src={rrseoSVGLogo}  width={"120px"} />
+            <img src={theme=="light"?rrseoSVGLogo:rrseoSVGLogoLight}  width={"110px"} />
           </Link>
         </div>
 
