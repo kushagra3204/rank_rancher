@@ -5,6 +5,7 @@ import "../styles/components/Navbar.css"
 import { PhoneCall } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { rrseoLogo, rrseoSVGLogo } from "../assets";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -42,7 +43,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <div className="logo">
           <Link to="/">
-            Rank Rancher
+            <img src={rrseoSVGLogo}  width={"120px"} />
           </Link>
         </div>
 
