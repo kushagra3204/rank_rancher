@@ -13,7 +13,6 @@
 .navbar.dark {
   background-color: var(--background-alt);
   color: var(--text-light);
-
 }
 
 .navbar.scrolled {
@@ -48,6 +47,11 @@
 .nav-menu {
   display: flex;
   align-items: center;
+}
+
+.nav-menu.dark {
+  background-color: var(--background-alt);
+  color: var(--text-light);
 }
 
 .nav-menu ul {
