@@ -1,6 +1,6 @@
 import React from 'react';
-import ConsultationButton from '../ui/ConsultationButton';
-import '../../styles/components/sections/CtaSection.css';
+import ConsultationButton from '../../ui/ConsultationButton';
+import '../../../styles/components/sections/HomePage/CtaSection.css';
 
 const CtaSection = () => {
   return (

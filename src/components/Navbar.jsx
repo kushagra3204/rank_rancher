@@ -6,6 +6,7 @@ import { PhoneCall } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { rrseoLogo, rrseoSVGLogo, rrseoSVGLogoLight } from "../assets";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -20,6 +21,17 @@ const Navbar = () => {
     { name: "Gigs", path: "/gigs" },
     { name: "Blog", path: "/blog" },
   ];
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentLink = navLinks.find(link => link.path === location.pathname);
+    if (currentLink) {
+      setActiveLink(currentLink.name);
+    } else {
+      setActiveLink(null)
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);

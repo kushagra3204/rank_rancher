@@ -1,22 +1,28 @@
-.testimonials-section {
+.consulting-section {
     padding: 5rem 0;
+    background-color: var(--background-alt);
   }
   
-  .testimonials-grid {
+  .section-description {
+    max-width: 800px;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+  }
+  
+  .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
   }
   
   @media (max-width: 992px) {
-    .testimonials-grid {
+    .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
   @media (max-width: 576px) {
-    .testimonials-grid {
+    .services-grid {
       grid-template-columns: 1fr;
     }
   }

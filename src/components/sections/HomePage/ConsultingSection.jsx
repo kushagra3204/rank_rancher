@@ -1,9 +1,21 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
-import ServiceCard from '../cards/ServiceCard';
-import '../../styles/components/sections/ConsultingSection.css';
+import ServiceCard from '../../cards/ServiceCard';
+import '../../../styles/components/sections/HomePage/ConsultingSection.css';
+import GigCard from '../../cards/gigCard';
 
 const ConsultingSection = () => {
+  const cardData = {
+    images: [
+      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    ],
+    title: "Modern Web Development",
+    content: "Discover the latest techniques and tools for building beautiful, responsive web applications. Learn how to create engaging user interfaces with smooth animations and interactive elements.",
+    readMoreUrl: "https://example.com/article"
+  };
+
   const services = [
     {
       id: 1,
@@ -71,9 +83,9 @@ const ConsultingSection = () => {
   ];
 
   return (
-    <section className="consulting-section">
+    <section className="consulting-section" id="service">
       <div className="container">
-        <SectionHeading title="Consulting Solutions" />
+        <SectionHeading label="services we provide" title="Consulting Solutions" />
         <p className="section-description">
           Professional guidance to optimize your business operations and growth.
           Our solutions are designed to deliver lasting efficiency and impact.
@@ -89,6 +101,7 @@ const ConsultingSection = () => {
               link={service.link}
             />
           ))}
+          
         </div>
       </div>
     </section>

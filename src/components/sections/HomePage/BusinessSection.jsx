@@ -1,13 +1,13 @@
 
 import React from 'react';
 import SectionHeading from './SectionHeading';
-import ConsultationButton from '../ui/ConsultationButton';
-import '../../styles/components/sections/BusinessSection.css';
-import SeoIllustration from '../ui/SeoIllustration';
+import ConsultationButton from '../../ui/ConsultationButton';
+import '../../../styles/components/sections/HomePage/BusinessSection.css';
+import SeoIllustration from '../../ui/SeoIllustration';
 
 const BusinessSection = () => {
   return (
-    <section className="business-section">
+    <section className="business-section" id="about">
       <div className="container">
         <SectionHeading 
           label="What We Do" 

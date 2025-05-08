@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/components/sections/SectionHeading.css';
+import '../../../styles/components/sections/HomePage/SectionHeading.css';
 
 const SectionHeading = ({ label, title }) => {
   return (
