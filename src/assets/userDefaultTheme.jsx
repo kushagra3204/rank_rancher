@@ -8,7 +8,7 @@ const ThemedUserSVG = () => {
   const outerFill = theme === 'dark' ? 'rgba(255,255,255,0.2)' : '#2A4157';
 
   return (
-    <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none">
+    <svg viewBox="0 0 24 24" fill="none">
       <path
         d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
         fill={outerFill}

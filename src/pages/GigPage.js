@@ -17,15 +17,14 @@ const GigPage = () => {
   const [gig, setGig] = useState(null);
   const [selectedTab, setSelectedTab] = useState('description');
   const [isLoading, setIsLoading] = useState(true);
+  const [pricingPackage, setPricingPackage] = useState("basic");
   
   useEffect(() => {
     // Simulate loading data from an API
     setTimeout(() => {
       const foundGig = gigData.find(g => g.slug === gigSlug);
-      setGig(foundGig); // Default to first gig if not found
+      setGig(foundGig);
       setIsLoading(false);
-      
-      // Scroll to top when gig changes
       window.scrollTo(0, 0);
     }, 500);
   }, [gigSlug]);
@@ -43,10 +42,6 @@ const GigPage = () => {
     console.log()
     return (
         <NotFound />
-    //   <div className="gig-error">
-    //     <h2>Gig not found</h2>
-    //     <p>We couldn't find the gig you're looking for.</p>
-    //   </div>
     );
   }
 
@@ -54,34 +49,7 @@ const GigPage = () => {
     <div className={`gig-page ${theme}`}>
       <div className="container">
         <div className="gig-header">
-          <div className="breadcrumb">
-            <a href="/">Home</a> / <a href="/services">Services</a> / <span>{gig.title}</span>
-          </div>
           <h1 className="gig-title">{gig.title}</h1>
-          
-          <div className="gig-seller-info">
-            <div className="seller-avatar">
-              <img src={gig.seller.avatar} alt={gig.seller.name} />
-            </div>
-            <div className="seller-details">
-              <h3>{gig.seller.name}</h3>
-              <div className="seller-level">{gig.seller.level}</div>
-              <div className="seller-rating">
-                <StarRating rating={gig.seller.rating} />
-                <span className="rating-count">({gig.seller.reviews})</span>
-              </div>
-            </div>
-            <div className="seller-stats">
-              <div className="stat">
-                <span className="stat-value">{gig.seller.ordersInQueue}</span>
-                <span className="stat-label">Orders in Queue</span>
-              </div>
-              <div className="stat">
-                <span className="stat-value">{gig.seller.completedOrders}</span>
-                <span className="stat-label">Completed Orders</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="gig-content">
@@ -192,23 +160,17 @@ const GigPage = () => {
             <div className="pricing-section">
               <h2>Pricing Packages</h2>
               <div className="pricing-tabs">
-                <button className="pricing-tab active">Basic</button>
-                <button className="pricing-tab">Standard</button>
-                <button className="pricing-tab">Premium</button>
+                <button className={`pricing-tab ${pricingPackage === "basic" && 'active'}`} onClick={() => setPricingPackage("basic")}>Basic</button>
+                <button className={`pricing-tab ${pricingPackage === "standard" && 'active'}`} onClick={() => setPricingPackage("standard")}>Standard</button>
+                <button className={`pricing-tab ${pricingPackage === "premium" && 'active'}`} onClick={() => setPricingPackage("premium")}>Premium</button>
               </div>
               <div className="pricing-cards">
-                {gig.packages.map((pkg, index) => (
+              {gig.packages
+                .filter((pkg) => pkg.name.toLowerCase() === pricingPackage)
+                .map((pkg, index) => (
                   <PricingCard key={index} package={pkg} />
-                ))}
+              ))}
               </div>
-            </div>
-            
-            <div className="cta-section">
-              <button className="contact-btn">Contact Seller</button>
-              <button className="like-btn">
-                <span className="heart-icon">♡</span> 
-                <span>Add to Wishlist</span>
-              </button>
             </div>
           </div>
         </div>

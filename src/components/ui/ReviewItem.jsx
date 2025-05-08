@@ -2,6 +2,7 @@
 import React from 'react';
 import StarRating from './StarRating';
 import '../../styles/components/ui/ReviewItem.css';
+import { ThemedUserSVG } from '../../assets';
 
 const ReviewItem = ({ review }) => {
   const formatDate = (dateString) => {
@@ -17,7 +18,7 @@ const ReviewItem = ({ review }) => {
     <div className="review-item">
       <div className="reviewer-info">
         <div className="reviewer-avatar">
-          <img src={review.avatar} alt={review.name} />
+          <ThemedUserSVG />
         </div>
         <div className="reviewer-details">
           <h4 className="reviewer-name">{review.name}</h4>
@@ -38,7 +39,10 @@ const ReviewItem = ({ review }) => {
         {review.sellerResponse && (
           <div className="seller-response">
             <div className="response-header">
-              <img src={review.sellerAvatar} alt="Seller" className="seller-avatar" />
+              <div className='seller-avatar'>
+                <ThemedUserSVG />
+              </div>
+              {/* <img src={ThemedUserSVG} alt="Seller" className="seller-avatar" /> */}
               <h5>Seller's Response</h5>
             </div>
             <p>{review.sellerResponse}</p>

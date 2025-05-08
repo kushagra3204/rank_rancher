@@ -2,12 +2,13 @@
 .pricing-card {
     padding: 20px;
     background-color: var(--background-color);
-    border-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
     transition: var(--transition);
   }
   
   .pricing-card:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     box-shadow: var(--box-shadow);
   }
   

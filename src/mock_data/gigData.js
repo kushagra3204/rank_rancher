@@ -45,10 +45,10 @@ const gigData = [
         { name: "Russian", level: "Intermediate" }
       ],
       images: [
-        "/lovable-uploads/efe1745f-b271-4a62-aadf-83482db91bc7.png",
-        "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/103052731/original/0f0edeff5f2967e70125b9f4fe008ea79d3fd17c/provide-complete-seo-service-rank-your-website-on-google.jpg",
-        "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/103052731/original/0c828f633ab48dd5a31eaa3d6c3541c369cf752d/provide-complete-seo-service-rank-your-website-on-google.jpg",
-        "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/103052731/original/797d1e4262d7ed0abfff706525b7ab4b4ff31d3f/provide-complete-seo-service-rank-your-website-on-google.jpg"
+       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ],
       averageRating: 4.7,
       reviews: [
