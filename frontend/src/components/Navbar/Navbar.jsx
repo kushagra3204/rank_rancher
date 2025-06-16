@@ -10,9 +10,9 @@ import { useLocation } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About", path: "#about" },
-  { name: "Service", path: "#service" },
-  { name: "Gigs", path: "#gigs" },
+  { name: "About", path: "/#about" },
+  { name: "Service", path: "/#service" },
+  { name: "Gigs", path: "/#gigs" },
   { name: "Blog", path: "/blog" },
   { name: "Admin Dashboard", path: "/admin"},
   { name: "Write Post", path: "/create-blog" }

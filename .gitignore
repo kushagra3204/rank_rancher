@@ -26,3 +26,5 @@ frontend/yarn-error.log*
 
 .env
 */.env
+*/.vercel
+*/node_modules
