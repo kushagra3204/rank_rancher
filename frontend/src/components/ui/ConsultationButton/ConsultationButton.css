@@ -1,0 +1,75 @@
+
+.consultation-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.consultation-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.consultation-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 40, 217, 0.3);
+}
+
+.consultation-button:hover::before {
+  opacity: 1;
+}
+
+.arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.arrow-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.consultation-button:hover .arrow-circle {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.consultation-button:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+.dark .consultation-button {
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+}
+
+.dark .consultation-button:hover {
+  box-shadow: 0 6px 16px rgba(167, 139, 250, 0.4);
+}

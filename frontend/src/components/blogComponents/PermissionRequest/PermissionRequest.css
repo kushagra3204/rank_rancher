@@ -1,0 +1,98 @@
+
+.permission-request {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .permission-request h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .permission-request p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+  
+  .permission-request .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .permission-request label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  .permission-request textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: border-color 0.3s;
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  .permission-request textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .request-button {
+    padding: 12px 24px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+  }
+  
+  .request-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .permission-submitted {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .success-icon {
+    background-color: var(--success-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .permission-submitted h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .permission-submitted p {
+    color: var(--text-light);
+  }  

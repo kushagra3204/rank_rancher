@@ -1,0 +1,124 @@
+
+.login-section {
+    padding: 5rem 0;
+  }
+  
+  .login-container {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .login-header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .login-header p {
+    color: var(--text-light);
+  }
+  
+  .login-demo-users {
+    background-color: var(--background-alt);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .login-demo-users p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  .login-demo-users ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--text-light);
+  }
+  
+  .login-demo-users li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .login-error {
+    background-color: var(--error-color);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .login-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+  }
+  
+  .login-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-button:hover {
+    filter: brightness(1.1);
+  }
+  
+  .login-footer {
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  .login-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 576px) {
+    .login-container {
+      padding: 1.5rem;
+    }
+  }  

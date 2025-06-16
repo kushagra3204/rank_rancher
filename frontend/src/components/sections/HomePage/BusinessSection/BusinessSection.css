@@ -1,0 +1,132 @@
+
+.business-section {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, var(--background-color), var(--background-alt));
+  position: relative;
+}
+
+.business-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(109, 40, 217, 0.03) 2px, transparent 2px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.business-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+
+.business-text {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.expertise-item {
+  position: relative;
+}
+
+.expertise-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+.expertise-item h3::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 12px;
+}
+
+.expertise-item p {
+  color: var(--text-light);
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.more-link {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  padding-left: 18px;
+  position: relative;
+}
+
+.more-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 18px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.more-link:hover::after {
+  width: calc(100% - 18px);
+}
+
+.business-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-color);
+  padding: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+@media (max-width: 992px) {
+  .business-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .business-text {
+    order: 2;
+  }
+  
+  .business-image {
+    order: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .business-section {
+    padding: 4rem 0;
+  }
+  
+  .expertise-item h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.dark .business-section {
+  background: linear-gradient(to bottom, var(--background-color), var(--background-alt));
+}
+
+.dark .business-section::before {
+  background-image: radial-gradient(rgba(167, 139, 250, 0.05) 2px, transparent 2px);
+}
+
+.dark .business-image {
+  border-color: rgba(51, 65, 85, 0.5);
+}

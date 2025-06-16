@@ -1,0 +1,108 @@
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container:focus-within {
+    border-color: #3b82f6;
+}
+
+.main-input {
+    border-radius: 0px !important;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 20px;
+    font-size: 16px;
+    outline: none;
+    color: #1e293b;
+    border-radius: 50px;
+}
+
+.main-input::placeholder {
+    color: #94a3b8;
+}
+
+.upload-icon-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.upload-icon-btn:hover:not(.disabled) {
+    background: #2563eb;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.upload-icon-btn.disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.upload-icon-btn.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.3);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+    .main-input {
+        color: #f1f5f9;
+    }
+
+    .main-input::placeholder {
+        color: #64748b;
+    }
+
+    .upload-icon-btn {
+        background: #60a5fa;
+        box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+    }
+
+    .upload-icon-btn:hover:not(.disabled) {
+        background: #3b82f6;
+        box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+    }
+
+    .upload-icon-btn.disabled {
+        background: #64748b;
+    }
+}
+
+@media (max-width: 640px) {
+    .file-upload-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .main-input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .upload-icon-btn {
+        padding: 12px;
+    }
+}

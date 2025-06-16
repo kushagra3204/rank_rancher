@@ -1,0 +1,199 @@
+.hero-section {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background: linear-gradient(to bottom, var(--background-color), var(--background-alt));
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 540px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.hero-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.separator {
+  margin: 0 8px;
+}
+
+.service-link {
+  color: #333;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-light,#555);
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.consultation-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  border: 1px solid #0047ab;
+  color: #0047ab;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consultation-button:hover {
+  background-color: #0047ab;
+  color: white;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0047ab;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.consultation-button:hover .arrow-container {
+  background-color: white;
+  color: #0047ab;
+  transform: translateX(5px);
+}
+
+.hero-svg {
+  padding: 20px;
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.hero-image.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.03);
+}
+
+/* From first CSS - kept for theme-based design */
+.service-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .consultation-button {
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .service-label {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .consultation-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
