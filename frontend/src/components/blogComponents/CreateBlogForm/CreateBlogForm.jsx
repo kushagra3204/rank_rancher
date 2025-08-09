@@ -15,7 +15,6 @@ const CreateBlogForm = ({ onSubmit, initialData = {} }) => {
   
   const handleEditorSave = (htmlContent) => {
     setContent(htmlContent);
-    console.log(content)
   };
   
   const handleSubmit = (e) => {
@@ -39,7 +38,7 @@ const CreateBlogForm = ({ onSubmit, initialData = {} }) => {
   
   return (
     <div className="create-blog-form">
-      <h2>{initialData.id ? 'Edit Blog Post' : 'Create New Blog Post'}</h2>
+      <h2>{initialData._id ? 'Edit Blog Post' : 'Create New Blog Post'}</h2>
       
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -86,7 +85,7 @@ const CreateBlogForm = ({ onSubmit, initialData = {} }) => {
               onChange={(e) => setCoverImage(e.target.value)}
               placeholder="Enter an image URL..."
             /> */}
-            <InputTagAndFileUpload />
+            <InputTagAndFileUpload name="image" label={"Enter image url or upload"} value={coverImage} onChange={(e) => setCoverImage(e)} />
           </div>
         </div>
         

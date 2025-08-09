@@ -39,7 +39,7 @@
     background-color: var(--background-color);
     transition: border-color 0.3s;
     min-height: 150px;
-    resize: vertical;
+    /* resize: vertical; */
   }
   
   .permission-request textarea:focus {

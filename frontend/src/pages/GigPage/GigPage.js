@@ -3,13 +3,13 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ThemeContext from '../../context/ThemeContext';
 import './GigPage.css';
-import gigData from '../../mock_data/gigData';
 import StarRating from '../../components/ui/StarRating/StarRating';
 import PricingCard from '../../components/cards/PricingCard/PricingCard';
 import Faq from '../../components/ui/Faq/Faq';
 import ImageGallery from '../../components/ui/ImageGallery/ImageGallery';
 import ReviewItem from '../../components/ui/ReviewItem/ReviewItem';
 import NotFound from '../NotFound/NotFound';
+import { getAllGigAPI } from '../../api/gigAPIs/getAllGigsApi';
 
 const GigPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -17,17 +17,34 @@ const GigPage = () => {
   const [gig, setGig] = useState(null);
   const [selectedTab, setSelectedTab] = useState('description');
   const [isLoading, setIsLoading] = useState(true);
-  const [pricingPackage, setPricingPackage] = useState("basic");
-  
+  const [pricingPackage, setPricingPackage] = useState(gig?.packages?.[0]?.name);
+  const [gigData, setGigData] = useState([]);
+
   useEffect(() => {
-    // Simulate loading data from an API
-    setTimeout(() => {
-      const foundGig = gigData.find(g => g.slug === gigSlug);
-      setGig(foundGig);
-      setIsLoading(false);
-      window.scrollTo(0, 0);
-    }, 500);
-  }, [gigSlug]);
+    const fetchAllGigData = async () => {
+      try {
+        const data = await getAllGigAPI();
+        console.log("Fetched gig data:", data);
+        setGigData(data);
+      } catch (err) {
+        console.error("Failed to load gigs:", err.message);
+      }
+    };
+
+    fetchAllGigData();
+  }, []);
+
+  useEffect(() => {
+    if (!gigData || gigData.length === 0) return;
+
+    const foundGig = gigData.find((g) => g.slug === gigSlug);
+    setGig(foundGig);
+    setPricingPackage(foundGig?.packages?.[0]?.name)
+
+    setIsLoading(false);
+    window.scrollTo(0, 0);
+  }, [gigSlug, gigData]);
+
 
   if (isLoading) {
     return (
@@ -39,7 +56,6 @@ const GigPage = () => {
   }
 
   if (!gig) {
-    console.log()
     return (
         <NotFound />
     );
@@ -85,7 +101,6 @@ const GigPage = () => {
                   <div className="gig-about">
                     <h2>About This Gig</h2>
                     <div className="gig-description" dangerouslySetInnerHTML={{__html: gig.description}}></div>
-                    
                     <div className="expertise-section">
                       <h3>Industry Expertise</h3>
                       <div className="expertise-tags">
@@ -160,13 +175,15 @@ const GigPage = () => {
             <div className="pricing-section">
               <h2>Pricing Packages</h2>
               <div className="pricing-tabs">
-                <button className={`pricing-tab ${pricingPackage === "basic" && 'active'}`} onClick={() => setPricingPackage("basic")}>Basic</button>
-                <button className={`pricing-tab ${pricingPackage === "standard" && 'active'}`} onClick={() => setPricingPackage("standard")}>Standard</button>
-                <button className={`pricing-tab ${pricingPackage === "premium" && 'active'}`} onClick={() => setPricingPackage("premium")}>Premium</button>
+                {gig.packages.map((pkg, index) =>  {
+                  return (
+                    <button className={`pricing-tab ${pricingPackage === pkg.name && 'active'}`} onClick={() => setPricingPackage(pkg.name)}>{pkg.name}</button>
+                  )
+                })}
               </div>
               <div className="pricing-cards">
               {gig.packages
-                .filter((pkg) => pkg.name.toLowerCase() === pricingPackage)
+                .filter((pkg) => pkg.name === pricingPackage)
                 .map((pkg, index) => (
                   <PricingCard key={index} package={pkg} />
               ))}

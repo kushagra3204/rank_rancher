@@ -26,8 +26,8 @@ const BlogList = ({ posts, loading }) => {
   return (
     <div className="blog-list">
       {posts.map((post) => (
-        <div key={post.id} className="blog-list-item">
-          <Link to={`/blog/${post.id}`} className="blog-card-link">
+        <div key={post._id} className="blog-list-item">
+          <Link to={`/blog/${post._id}`} className="blog-card-link">
             <BlogPost post={post} isPreview={true} />
           </Link>
         </div>

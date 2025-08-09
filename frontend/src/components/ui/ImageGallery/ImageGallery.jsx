@@ -28,17 +28,20 @@ const ImageGallery = ({ images }) => {
         <button className="gallery-nav prev" onClick={goToPrev}>❮</button>
         <button className="gallery-nav next" onClick={goToNext}>❯</button>
       </div>
-      <div className="thumbnail-container">
+      {/* <div className="thumbnail-container">
         {images.map((image, index) => (
           <div 
             key={index} 
             className={`thumbnail ${currentImageIndex === index ? 'active' : ''}`}
+            style={{
+              transform: `translateX(-${90 * currentImageIndex}px)`,
+            }}
             onClick={() => goToImage(index)}
           >
             <img src={image} alt={`Thumbnail ${index + 1}`} />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

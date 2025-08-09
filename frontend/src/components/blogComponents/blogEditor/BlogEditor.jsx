@@ -6,7 +6,6 @@ import SlideshowManager from "../../../utils/SlideshowManager"
 import "./BlogEditor.css"
 
 const BlogEditor = ({ onSave, initialContent = "" }) => {
-  console.log(initialContent)
   const [content, setContent] = useState(initialContent)
   const [selectedText, setSelectedText] = useState("")
   const [showLinkInput, setShowLinkInput] = useState(false)
@@ -345,7 +344,6 @@ const BlogEditor = ({ onSave, initialContent = "" }) => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log("OnSave: ",content)
     onSave(content);
   }
 
@@ -682,7 +680,7 @@ const BlogEditor = ({ onSave, initialContent = "" }) => {
 
       {showLinkInput && (
         <div className="popup-input">
-          <input type="text" placeholder="Enter URL" value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)} />
+          <input type="url" placeholder="Enter URL" value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)} />
           <input
             type="text"
             placeholder="Link Text (optional)"
@@ -705,7 +703,7 @@ const BlogEditor = ({ onSave, initialContent = "" }) => {
       {showImageInput && (
         <div className="popup-input">
           <input
-            type="text"
+            type="url"
             placeholder="Enter Image URL"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
@@ -732,7 +730,7 @@ const BlogEditor = ({ onSave, initialContent = "" }) => {
       {showVideoInput && (
         <div className="popup-input">
           <input
-            type="text"
+            type="url"
             placeholder="Enter Video URL (YouTube, etc.)"
             value={videoUrl}
             onChange={(e) => setVideoUrl(e.target.value)}

@@ -1,0 +1,222 @@
+.icon-select {
+  position: relative;
+  /* width: 300px; */
+  font-family: Arial;
+color: var(--text-color);
+}
+
+.icon-select-input {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #aaa; */
+  width: 100%;
+padding: 12px 15px;
+border: 1px solid var(--border-color);
+border-radius: 6px;
+font-size: 1rem;
+color: #757575;
+background-color: var(--background-color);
+transition: border-color 0.3s;
+  border-radius: 4px;
+  padding: 8px 10px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.icon-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  z-index: 1000;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.icon-search-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+}
+
+.icon-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.icon-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.icon-option:hover {
+  background: #f0f0f0;
+}
+
+/* .flag-select {
+  position: relative;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.flag-select-input {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.flag-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.flag-search-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+.flag-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.flag-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.flag-option:hover {
+  background-color: #f0f0f0;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  margin-right: 10px;
+} */
+
+
+/* Container of the dropdown */
+.flag-select {
+  position: relative;
+  width: 100%; /* Stretches within parent */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* The input box (selected item or placeholder) */
+.flag-select-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+/* The dropdown menu container */
+.flag-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The input box inside dropdown for searching */
+.flag-search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Scrollable list of countries */
+.flag-list {
+  max-height: 200px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Each country option row */
+.flag-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  cursor: pointer;
+  gap: 10px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.flag-option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Flag image */
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Optional: Smooth scroll on dropdown */
+.flag-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flag-list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.flag-list::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+}

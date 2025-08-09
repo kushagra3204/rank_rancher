@@ -1,10 +1,7 @@
-
-/* Gig Page Styles */
-
 .gig-page {
     padding: 40px 0;
     transition: var(--transition);
-    margin-top: 60px;
+    margin-top: 30px;
   }
   
   .gig-loading {
@@ -114,16 +111,25 @@
   
   /* Gig Content Layout */
   .gig-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
     gap: 30px;
   }
   
   .gig-gallery {
     margin-bottom: 30px;
     border-radius: var(--border-radius);
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: var(--box-shadow);
+    max-width: 62vw;
+    /* display: flex; */
+    /* position: relative; */
+  }
+
+  .gig-main {
+    flex: 2;
+    /* max-width: 62vw; */
   }
   
   /* Tab Navigation */
@@ -163,7 +169,6 @@
     background-color: var(--primary-color);
   }
   
-  /* Gig Description */
   .gig-about h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
@@ -172,6 +177,10 @@
   .gig-description {
     line-height: 1.8;
     margin-bottom: 30px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
   }
   
   .expertise-section,
@@ -220,7 +229,8 @@
   
   /* Sidebar */
   .gig-sidebar {
-    position: sticky;
+    /* position: sticky; */
+    flex: 1;
     top: 20px;
   }
   
@@ -473,12 +483,19 @@
   
   /* Responsive Styles */
   @media (max-width: 1024px) {
+    .gig-page {
+      margin-top: 20px;
+    }
+    .gig-gallery {
+      max-width: 90vw;
+    }
     .gig-content {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
     
     .gig-sidebar {
       position: static;
+      width: 100%;
     }
   }
   
@@ -497,9 +514,9 @@
       flex-direction: column;
     }
     
-    .gig-tabs {
+    /* .gig-tabs {
       overflow-x: auto;
-    }
+    } */
     
     .tab-btn {
       padding: 15px 15px;

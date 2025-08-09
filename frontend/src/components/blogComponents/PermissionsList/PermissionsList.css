@@ -101,7 +101,8 @@
   }
   
   .approve-button:hover {
-    background-color: rgba(var(--success-color), 0.85);
+    /* background-color: rgba(var(--success-color), 0.85); */
+    opacity: 0.65;
   }
   
   .reject-button {
@@ -110,7 +111,8 @@
   }
   
   .reject-button:hover {
-    background-color: rgba(var(--error-color), 0.85);
+    /* background-color: rgba(var(--error-color), 0.85); */
+    opacity: 0.65;
   }
   
   .permissions-empty {

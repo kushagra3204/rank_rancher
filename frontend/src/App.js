@@ -19,6 +19,7 @@ import './App.css';
 import './components/ui/SeoBusinessSvg/SeoBusinessSvg.css';
 import Footer from "./components/Footer/Footer"
 import Navbar from './components/Navbar/Navbar';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -36,35 +37,35 @@ function App() {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <UserProvider>
-      <BlogProvider>
-      <Router>
-        <div className={`app ${theme}`}>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/gig/:gigSlug" element={<GigPage />} />
+    <Router>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <UserProvider>
+          <BlogProvider>
+            <div className={`app ${theme}`}>
+              <Navbar />
+              <main>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/gig/:gigSlug" element={<GigPage />} />
 
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/create-blog" element={<CreateBlog />} />
-              <Route path="/edit/:id" element={<CreateBlog />} />
-              <Route path="/request-permission" element={<RequestPermission />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="/login" element={<Login />} />
+                  <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:id" element={<BlogPost />} />
+                  <Route path="/create-blog" element={<CreateBlog />} />
+                  <Route path="/edit/:id" element={<CreateBlog />} />
+                  <Route path="/request-permission" element={<RequestPermission />} />
+                  <Route path="/admin" element={<AdminDashboard />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
 
-              <Route path="*" element={<NotFound/>} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      
-      </Router>  
-      </BlogProvider>
-      </UserProvider>
-    </ThemeContext.Provider>
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </BlogProvider>
+        </UserProvider>
+      </ThemeContext.Provider>
+    </Router>
   );
 }
 

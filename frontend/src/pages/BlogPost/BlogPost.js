@@ -10,7 +10,7 @@ const BlogPostPage = () => {
   const { getBlogById, deleteBlog } = useBlog();
   const { isAdmin, currentUser } = useUser();
   
-  const post = getBlogById(parseInt(id));
+  const post = getBlogById(id);
   
   if (!post) {
     return (
@@ -28,7 +28,7 @@ const BlogPostPage = () => {
   
   const handleDelete = () => {
     if (window.confirm('Are you sure you want to delete this blog post?')) {
-      deleteBlog(post.id);
+      deleteBlog(post._id);
       window.location.href = '/blog';
     }
   };
@@ -48,9 +48,9 @@ const BlogPostPage = () => {
                 Back to Blog
               </Link>
               
-              {(isAdmin() || isAuthor) && (
+              {(isAdmin()) && (
                 <div className="post-actions">
-                  <Link to={`/edit/${post.id}`} className="edit-button">
+                  <Link to={`/edit/${post._id}`} className="edit-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
                       <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/>

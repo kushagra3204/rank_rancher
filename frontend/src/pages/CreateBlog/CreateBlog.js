@@ -15,7 +15,7 @@ const CreateBlog = () => {
   
   // Check if we're editing an existing post
   const isEditing = !!id;
-  const existingPost = isEditing ? getBlogById(parseInt(id)) : null;
+  const existingPost = isEditing ? getBlogById(id) : null;
   
   // Redirect if not admin or contributor
   // if (!currentUser || (!isAdmin() && !isContributor())) {
@@ -52,7 +52,7 @@ const CreateBlog = () => {
       };
       
       if (isEditing) {
-        blogWithAuthor.id = existingPost.id;
+        blogWithAuthor._id = existingPost._id;
         blogWithAuthor.date = existingPost.date;
         updateBlog(blogWithAuthor);
       } else {

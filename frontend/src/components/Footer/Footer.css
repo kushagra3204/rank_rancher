@@ -42,7 +42,9 @@
   }
   
   .footer-column ul {
+    list-style: none;
     display: flex;
+    padding: 0;
     flex-direction: column;
     gap: 0.75rem;
   }

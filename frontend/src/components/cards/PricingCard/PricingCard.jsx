@@ -7,7 +7,7 @@ const PricingCard = ({ package: pkg }) => {
     <div className="pricing-card">
       <div className="package-header">
         <h3 className="package-name">{pkg.name}</h3>
-        <div className="package-price">${pkg.price}</div>
+        <div className="package-price">₹ {pkg.price}</div>
       </div>
       <p className="package-description">{pkg.description}</p>
       <div className="package-delivery">

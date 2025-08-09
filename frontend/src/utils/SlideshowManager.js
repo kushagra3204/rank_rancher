@@ -109,8 +109,6 @@ class SlideshowManager {
 
     // Mark as initialized
     slideshow.setAttribute('data-slideshow-initialized', 'true');
-
-    console.log(`Slideshow ${slideshowId} initialized with ${slides.length} slides`);
   }
 
   removeEventListeners(slideshowId) {
@@ -148,8 +146,6 @@ class SlideshowManager {
         this.initializeSlideshow(id);
       }
     });
-
-    console.log(`Initialized ${slideshows.length} slideshows`);
   }
 
   cleanupAllSlideshows() {

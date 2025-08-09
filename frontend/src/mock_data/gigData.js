@@ -1,4 +1,3 @@
-
 const gigData = [
     {
       id: 1,
@@ -398,4 +397,4 @@ const gigData = [
     }
   ];
   
-  export default gigData;  
+export default gigData;  

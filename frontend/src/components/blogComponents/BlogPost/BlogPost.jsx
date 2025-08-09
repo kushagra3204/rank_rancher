@@ -54,14 +54,17 @@ const BlogPost = ({ post, isPreview = false }) => {
           </div>
         </div>
       )}
-      <div 
-        ref={contentRef}
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
 
+      {!isPreview && (
+        <div 
+          ref={contentRef}
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      )}
+      
       {isPreview && (
-        <a href={`/blog/${post.id}`} className="read-more">
+        <a href={`/blog/${post._id}`} className="read-more">
           Read More
         </a>
       )}

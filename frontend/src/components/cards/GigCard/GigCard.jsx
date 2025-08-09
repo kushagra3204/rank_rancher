@@ -7,7 +7,7 @@ const GigCard = ({
   title, 
   content, 
   readMoreUrl, 
-  slideshowDelay = 2000 
+  slideshowDelay = 1000 
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(true);

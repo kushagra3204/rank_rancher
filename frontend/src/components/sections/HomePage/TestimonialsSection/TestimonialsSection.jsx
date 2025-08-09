@@ -86,29 +86,7 @@ const TestimonialsSection = () => {
   const intervalRef = useRef(null)
   const cardWidth = useCardWidth()
 
-  // Determine how many cards to show based on screen width
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 576) {
-  //       setVisibleCount(1)
-  //     } else if (window.innerWidth < 992) {
-  //       setVisibleCount(2)
-  //     } else {
-  //       setVisibleCount(3)
-  //     }
-  //   }
-
-  //   handleResize()
-  //   window.addEventListener("resize", handleResize)
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize)
-  //   }
-  // }, [])
-
-  // Auto-slide functionality
   useEffect(() => {
-    console.log(currentIndex)
     const startAutoSlide = () => {
       intervalRef.current = setInterval(() => {
         slideNext()
@@ -149,15 +127,6 @@ const TestimonialsSection = () => {
     resetInterval()
   }
 
-  // const getVisibleTestimonials = () => {
-  //   const visibleItems = []
-  //   for (let i = 0; i < visibleCount; i++) {
-  //     const index = (currentIndex + i) % testimonials.length
-  //     visibleItems.push(testimonials[index])
-  //   }
-  //   return visibleItems
-  // }
-
   return (
     <section className="testimonials-section" id="testimonials">
       <div className="container">
@@ -197,20 +166,6 @@ const TestimonialsSection = () => {
             &gt;
           </button>
         </div>
-
-        {/* <div className="carousel-indicators">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              className={`indicator ${index === currentIndex ? "active" : ""}`}
-              onClick={() => {
-                setCurrentIndex(index)
-                resetInterval()
-              }}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div> */}
       </div>
     </section>
   )

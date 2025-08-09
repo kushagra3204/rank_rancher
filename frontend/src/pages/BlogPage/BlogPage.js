@@ -3,13 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { useBlog } from '../../context/BlogContext';
 import BlogList from '../../components/blogComponents/BlogList/BlogList';
 import './BlogPage.css';
+import { FaEdit } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const BlogPage = () => {
   const { blogs } = useBlog();
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  
+  const navigate = useNavigate()
   const categories = ['all', ...new Set(blogs.map(blog => blog.category))];
   
   useEffect(() => {
@@ -70,7 +72,12 @@ const BlogPage = () => {
             </div>
           </div>
         </section>
-        
+
+        <button className="create-blog-button" onClick={() => navigate("/create-blog")}>
+          <FaEdit />
+          Create Your Own Blog
+        </button>
+
         <section className="blog-content">
           <div className="container">
             {filteredBlogs.length === 0 && searchTerm && (

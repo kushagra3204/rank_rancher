@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import './Login.css';
@@ -13,13 +13,19 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
-  // Redirect if already logged in
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/');
+    }
+  }, [currentUser, navigate]);
+
+
   if (currentUser) {
     navigate('/');
     return null;
   }
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     
@@ -28,8 +34,8 @@ const Login = () => {
       return;
     }
     
-    const success = login(email, password);
-    
+    const success = await login(email, password);
+    console.log(success)
     if (success) {
       navigate('/');
     } else {
@@ -45,17 +51,7 @@ const Login = () => {
             <div className="login-container">
               <div className="login-header">
                 <h1>Welcome Back</h1>
-                <p>Sign in to continue to Blogify</p>
-              </div>
-              
-              <div className="login-demo-users">
-                <p>For demo purposes, use one of these accounts:</p>
-                <ul>
-                  <li><strong>Admin:</strong> admin@example.com</li>
-                  <li><strong>Contributor:</strong> contributor@example.com</li>
-                  <li><strong>Reader:</strong> reader@example.com</li>
-                  <li>(Password can be anything)</li>
-                </ul>
+                <p>Sign in to continue</p>
               </div>
               
               {error && <div className="login-error">{error}</div>}
@@ -73,7 +69,10 @@ const Login = () => {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="password">Password</label>
+                  <div style={{display: "flex", justifyContent: "space-between"}}>
+                    <label htmlFor="password">Password</label>
+                    <p style={{fontSize: "15px", color: "#a78bfa", fontWeight: "500", cursor: "pointer"}}>Forgot Password?</p>
+                  </div>
                   <input
                     type="password"
                     id="password"
@@ -89,7 +88,7 @@ const Login = () => {
               </form>
               
               <div className="login-footer">
-                <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
               </div>
             </div>
           </div>
