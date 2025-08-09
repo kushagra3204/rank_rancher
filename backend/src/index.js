@@ -1,8 +1,9 @@
-const express = require("express");
-const app = express();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+const connectDB = require('./config/db')
+const app = require('./app')
+connectDB();
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
-
-app.listen(5000, () => console.log("Server ready on port 5000."));
-
-module.exports = app;
+app.listen(process.env.BACKEND_PORT, () => {
+    console.log("Server is Running");
+});
