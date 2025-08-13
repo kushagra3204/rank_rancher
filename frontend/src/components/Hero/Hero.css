@@ -11,6 +11,18 @@
   -webkit-user-drag: none;
 }
 
+@media (max-height: 800px) {
+  .hero-section {
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 750px) {
+  .hero-section {
+    margin-top: 20px;
+  }
+}
+
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
