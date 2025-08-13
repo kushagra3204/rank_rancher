@@ -10,7 +10,7 @@ app.use(cors({
     credentials: true
 }))
 
-app.use(express.json({ limit: '100mb' }))
+app.use(express.json({ limit: '500mb' }))
 app.use(cookieParser());
 app.use('/api',routes);
 
