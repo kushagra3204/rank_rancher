@@ -5,7 +5,6 @@ import { createGigAPI } from "../../../../api/gigAPIs/createGigApi"
 import Tooltip from '@mui/material/Tooltip';
 import FlagIconSelect from "../../../ui/IconSelect/FlagIconSelect";
 import ImageFormComponent from "../../../ui/ImageFormComponent/ImageFormComponent";
-// import { formatDate } from "ngx-bootstrap/chronos";
 import InputTagAndFileUpload from "../../../ui/InputTagAndFileUpload/InputTagAndFileUpload";
 
 const initialFormState = {

@@ -203,7 +203,7 @@ const GigPage = () => {
                     {gig.packages.map((pkg, index) => (
                       <th key={index}>
                         {pkg.name}
-                        <div className="package-price">${pkg.price}</div>
+                        <div className="package-price">₹{pkg.price}</div>
                       </th>
                     ))}
                   </tr>

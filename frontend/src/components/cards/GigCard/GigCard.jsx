@@ -7,7 +7,7 @@ const GigCard = ({
   title, 
   content, 
   readMoreUrl, 
-  slideshowDelay = 1000 
+  slideshowDelay = 800 
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
@@ -38,11 +38,11 @@ const GigCard = ({
   };
 
   const handleReadMoreClick = () => {
-    window.location.href = readMoreUrl;
+    window.location.href = `/gig/${readMoreUrl}`;
   };
 
   return (
-    <div className="animated-card">
+    <div className="animated-card" onClick={handleReadMoreClick}>
       <div 
         className="card-image-container" 
         onMouseEnter={handleMouseEnter} 
@@ -69,15 +69,17 @@ const GigCard = ({
 
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
-        <p className="card-text">{content}</p>
-        <button 
+        <p className="card-text" dangerouslySetInnerHTML={{__html: content}}></p>
+      </div>
+      {/* <div style={{display: 'flex', height: "100%", width: "100%", padding: "0 0 20px 20px", alignItems: "end"}}> */}
+        {/* <button 
           className="read-more-button" 
           onClick={handleReadMoreClick}
         >
           Read More
           <span className="arrow">→</span>
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
     </div>
   );
 };
