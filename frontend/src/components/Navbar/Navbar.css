@@ -236,7 +236,7 @@ mobile-menu-button.active span:nth-child(2) {
   cursor: pointer;
 }
 
-.login-nav-btn .icon {
+.login-nav-btn .icon-nav {
   background: white;
   margin-left: 1em;
   position: absolute;
@@ -251,20 +251,20 @@ mobile-menu-button.active span:nth-child(2) {
   transition: all 0.3s;
 }
 
-.login-nav-btn:hover .icon {
+.login-nav-btn:hover .icon-nav {
   width: calc(100% - 0.6em);
 }
 
-.login-nav-btn .icon svg {
+.login-nav-btn .icon-nav svg {
   width: 1.1em;
   transition: transform 0.3s;
   color: #7b52b9;
 }
 
-.login-nav-btn:hover .icon svg {
+.login-nav-btn:hover .icon-nav svg {
   transform: translateX(0.1em);
 }
 
-.login-nav-btn:active .icon {
+.login-nav-btn:active .icon-nav {
   transform: scale(0.95);
 }

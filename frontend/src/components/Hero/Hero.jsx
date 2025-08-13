@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import './Hero.css';
-import { heroSvg } from "../../assets";
+import { heroSvg, heroSEO, heroSEOSVG } from "../../assets";
 
 const Hero = () => {
   const heroRef = useRef(null)
@@ -48,7 +48,7 @@ const Hero = () => {
           </button>
         </div>
         <div className="hero-image" ref={imageRef}>
-          <img src={heroSvg} className="hero-svg" />
+          <img src={heroSEOSVG} className="hero-svg" />
         </div>
       </div>
     </section>

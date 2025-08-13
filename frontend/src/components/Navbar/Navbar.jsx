@@ -100,7 +100,7 @@ const Navbar = () => {
                 }}
               >
                 {currentUser ? "Logout" : "Login"}
-                <div className="icon">
+                <div className="icon-nav">
                   <svg
                     height="24"
                     width="24"

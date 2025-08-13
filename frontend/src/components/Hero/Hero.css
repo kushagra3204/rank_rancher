@@ -3,6 +3,12 @@
   padding-bottom: 60px;
   background: linear-gradient(to bottom, var(--background-color), var(--background-alt));
   overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-drag: none;
 }
 
 .hero-container {
@@ -99,6 +105,8 @@
 
 .hero-svg {
   padding: 20px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .hero-image {
@@ -109,6 +117,8 @@
   transform: translateX(20px);
   transition: all 0.8s ease;
   transition-delay: 0.2s;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .hero-image.animate-in {
