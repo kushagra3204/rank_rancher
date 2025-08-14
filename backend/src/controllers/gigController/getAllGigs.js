@@ -19,7 +19,8 @@ const getAllGigs = async (req, res) => {
       faqs: gig.faqs,
       packages: gig.packages,
       comparePackages: gig.comparePackages,
-      compareFeatures: gig.compareFeatures
+      compareFeatures: gig.compareFeatures,
+      gigURL: gig.gigURL,
     }));
 
     res.json(formattedGigs);

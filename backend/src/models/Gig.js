@@ -58,7 +58,8 @@ const gigSchema = new mongoose.Schema({
   faqs: [faqSchema],
   packages: [packageSchema],
   comparePackages: { type: Boolean, default: false },
-  compareFeatures: [compareFeatureSchema]
+  compareFeatures: [compareFeatureSchema],
+  gigURL: {type: String}
 }, { timestamps: true });
 
 module.exports = mongoose.model('Gig', gigSchema);
