@@ -5,8 +5,8 @@ import './ConsultationButton.css';
 
 const ConsultationButton = () => {
   return (
-    <a href="#contact" className="consultation-button">
-      <span>Get a Free SEO Consultation</span>
+    <a href="https://www.fiverr.com/rank_rancher" className="consultation-button">
+      <span>Boost Your SEO Today</span>
       <div className="arrow-circle">
         <FaArrowRight className="arrow-icon" />
       </div>

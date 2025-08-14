@@ -95,7 +95,7 @@ const Login = () => {
         </section>
       </main>
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import './PricingCard.css';
 
-const PricingCard = ({ package: pkg }) => {
+const PricingCard = ({ package: pkg, gigData=null }) => {
   return (
     <div className="pricing-card">
       <div className="package-header">
@@ -22,7 +22,7 @@ const PricingCard = ({ package: pkg }) => {
           </div>
         ))}
       </div>
-      <button className="continue-btn">Continue</button>
+      <button className="continue-btn" onClick={() => window.open(gigData.gigURL ?? "https://www.fiverr.com/rank_rancher", "_blank")}>Continue</button>
     </div>
   );
 };

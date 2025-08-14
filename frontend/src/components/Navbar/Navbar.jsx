@@ -30,13 +30,36 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const currentLink = navLinks.find(link => link.path === location.pathname);
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const section = document.getElementById(id);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 0);
+      }
+    }
+  }, [location.hash]);
+
+  
+  useEffect(() => {
+    let currentLink;
+    currentLink = navLinks.find(link => {
+      const fullPath = link.path;
+      return fullPath === location.pathname + location.hash;
+    });
+
+    if (!currentLink) {
+      currentLink = navLinks.find(link => link.path === location.pathname);
+    }
+
     if (currentLink) {
       setActiveLink(currentLink.name);
     } else {
-      setActiveLink(null)
+      setActiveLink(null);
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);

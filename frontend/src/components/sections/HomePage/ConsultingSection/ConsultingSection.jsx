@@ -132,9 +132,10 @@ const ConsultingSection = () => {
   return (
     <section className="consulting-section" id="service">
       <div className="container">
-        <SectionHeading label="services we provide" title="Consulting Solutions" />
+        <SectionHeading label="services we provide" title="SEO Solutions" />
         <p className="section-description">
-          Professional guidance to optimize your business operations and growth.
+          Professional guidance to optimize your website’s performance and search visibility, 
+          delivering lasting efficiency and measurable growth.
           Our solutions are designed to deliver lasting efficiency and impact.
         </p>
         

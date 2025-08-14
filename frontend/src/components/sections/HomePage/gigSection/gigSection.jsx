@@ -102,13 +102,14 @@ const GigSection = () => {
   return (
     <section className="consulting-section" id="gigs">
       <div className="container">
-        <SectionHeading label="services we provide" title="Consulting Solutions" />
+        <SectionHeading label="fiverr gigs" title="Our Featured Gigs" />
         <p className="section-description">
-          Professional guidance to optimize your business operations and growth.
-          Our solutions are designed to deliver lasting efficiency and impact.
+          Explore a variety of professional Fiverr gigs tailored to meet your needs.
+          From design to development, our curated services are crafted to deliver
+          quality results that help your business grow and succeed.
         </p>
         
-        <div className="services-grid">
+        <div className="gig-grid">
           {services.map(cardData => (
             <GigCard 
               images={cardData.images}
@@ -118,7 +119,6 @@ const GigSection = () => {
               slideshowDelay={2000}
             />
           ))}
-          
         </div>
       </div>
     </section>

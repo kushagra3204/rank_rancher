@@ -121,7 +121,7 @@ const Signup = () => {
         </section>
       </main>
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

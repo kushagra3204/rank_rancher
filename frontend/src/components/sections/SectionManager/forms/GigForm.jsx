@@ -32,6 +32,7 @@ const initialFormState = {
   faqs: [],
   comparePackages: false,
   compareFeatures: [],
+  gigURL: "",
 }
 
 const GigForm = ({ onUpdate }) => {
@@ -142,6 +143,21 @@ const GigForm = ({ onUpdate }) => {
             placeholder="Enter brief description"
           />
         </div>
+
+        <div className="form-group">
+          <label>
+            <FileText className="label-icon" />
+            Gig URL
+          </label>
+          <input
+            type="text"
+            name="gigURL"
+            value={formData.gigURL}
+            onChange={handleChange}
+            placeholder="Enter gig url from fiverr"
+          />
+        </div>
+
         <div className="form-group">
           <label>
             <FileText className="label-icon" />

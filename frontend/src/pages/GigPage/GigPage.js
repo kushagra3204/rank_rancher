@@ -185,7 +185,7 @@ const GigPage = () => {
               {gig.packages
                 .filter((pkg) => pkg.name === pricingPackage)
                 .map((pkg, index) => (
-                  <PricingCard key={index} package={pkg} />
+                  <PricingCard key={index} package={pkg} gigData={gig} />
               ))}
               </div>
             </div>
@@ -229,7 +229,7 @@ const GigPage = () => {
                     <td></td>
                     {gig.packages.map((pkg, i) => (
                       <td key={i}>
-                        <button className="select-package-btn">Select</button>
+                        <button className="select-package-btn" onClick={() => window.open(gig.gigURL ?? "https://www.fiverr.com/rank_rancher", "_blank")}>Select</button>
                       </td>
                     ))}
                   </tr>

@@ -6,7 +6,7 @@
   transition: var(--transition);
   position: relative;
   border: 1px solid rgba(226, 232, 240, 0.5);
-  height: 354px;
+  /* height: 354px; */
   width: 100;
   width: 374px;
   display: flex;
@@ -221,7 +221,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 364px;
     display: flex;
@@ -239,7 +239,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 350px;
     display: flex;
@@ -257,7 +257,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 330px;
     display: flex;
@@ -275,7 +275,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 310px;
     display: flex;
@@ -293,7 +293,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 300px;
     display: flex;
@@ -311,7 +311,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid rgba(226, 232, 240, 0.5);
-    height: 320px;
+    /* height: 320px; */
     width: 100;
     width: 280px;
     display: flex;

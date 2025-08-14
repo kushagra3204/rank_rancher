@@ -40,8 +40,8 @@ const Hero = () => {
           <p>
             We deliver data-driven strategies and optimizations that boost your search engine rankings. From backlink building to keyword research, our comprehensive approach creates lasting results.
           </p>
-          <button className="consultation-button">
-            <span>Get a Free Consultation</span>
+          <button className="consultation-button" onClick={() => window.open("https://www.fiverr.com/rank_rancher", "_blank")}>
+            <span>Boost Your SEO Today</span>
             <div className="arrow-container">
               <ArrowRight size={18} />
             </div>
