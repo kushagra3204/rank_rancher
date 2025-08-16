@@ -9,7 +9,8 @@ import Faq from '../../components/ui/Faq/Faq';
 import ImageGallery from '../../components/ui/ImageGallery/ImageGallery';
 import ReviewItem from '../../components/ui/ReviewItem/ReviewItem';
 import NotFound from '../NotFound/NotFound';
-import { getAllGigAPI } from '../../api/gigAPIs/getAllGigsApi';
+// import { getAllGigAPI } from '../../api/gigAPIs/getAllGigsApi';
+import { getIndividualGigAPI } from '../../api/gigAPIs/getIndividualGigAPI';
 
 const GigPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -18,32 +19,24 @@ const GigPage = () => {
   const [selectedTab, setSelectedTab] = useState('description');
   const [isLoading, setIsLoading] = useState(true);
   const [pricingPackage, setPricingPackage] = useState(gig?.packages?.[0]?.name);
-  const [gigData, setGigData] = useState([]);
-
+  
   useEffect(() => {
     const fetchAllGigData = async () => {
       try {
-        const data = await getAllGigAPI();
+        const data = await getIndividualGigAPI(gigSlug);
         console.log("Fetched gig data:", data);
-        setGigData(data);
+        setGig(data?.gig);
+        setPricingPackage(data?.gig?.packages?.[0]?.name)
       } catch (err) {
         console.error("Failed to load gigs:", err.message);
+      } finally {
+        setIsLoading(false);
+        window.scrollTo(0, 0);
       }
     };
 
     fetchAllGigData();
-  }, []);
-
-  useEffect(() => {
-    if (!gigData || gigData.length === 0) return;
-
-    const foundGig = gigData.find((g) => g.slug === gigSlug);
-    setGig(foundGig);
-    setPricingPackage(foundGig?.packages?.[0]?.name)
-
-    setIsLoading(false);
-    window.scrollTo(0, 0);
-  }, [gigSlug, gigData]);
+  }, [gigSlug]);
 
 
   if (isLoading) {
@@ -104,7 +97,7 @@ const GigPage = () => {
                     <div className="expertise-section">
                       <h3>Industry Expertise</h3>
                       <div className="expertise-tags">
-                        {gig.expertiseAreas.map((area, index) => (
+                        {gig?.expertiseAreas?.map((area, index) => (
                           <span key={index} className="expertise-tag">{area}</span>
                         ))}
                       </div>
@@ -113,7 +106,7 @@ const GigPage = () => {
                     <div className="language-section">
                       <h3>Languages</h3>
                       <div className="language-list">
-                        {gig.languages.map((lang, index) => (
+                        {gig?.languages?.map((lang, index) => (
                           <div key={index} className="language-item">
                             <span className="language-name">{lang.name}</span>
                             <span className="language-level">{lang.level}</span>
@@ -134,7 +127,7 @@ const GigPage = () => {
                         <span className="rating-count">{gig.reviews.length} reviews</span>
                       </div>
                       <div className="rating-breakdown">
-                        {[5, 4, 3, 2, 1].map(stars => {
+                        {[5, 4, 3, 2, 1]?.map(stars => {
                           const count = gig.reviews.filter(review => Math.round(review.rating) === stars).length;
                           const percentage = Math.round((count / gig.reviews.length) * 100);
                           return (
@@ -150,7 +143,7 @@ const GigPage = () => {
                       </div>
                     </div>
                     <div className="reviews-list">
-                      {gig.reviews.map((review, index) => (
+                      {gig?.reviews?.map((review, index) => (
                         <ReviewItem key={index} review={review} />
                       ))}
                     </div>
@@ -161,7 +154,7 @@ const GigPage = () => {
                   <div className="gig-faqs">
                     <h2>Frequently Asked Questions</h2>
                     <div className="faqs-list">
-                      {gig.faqs.map((faq, index) => (
+                      {gig?.faqs?.map((faq, index) => (
                         <Faq key={index} question={faq.question} answer={faq.answer} />
                       ))}
                     </div>
@@ -175,16 +168,16 @@ const GigPage = () => {
             <div className="pricing-section">
               <h2>Pricing Packages</h2>
               <div className="pricing-tabs">
-                {gig.packages.map((pkg, index) =>  {
+                {gig?.packages?.map((pkg, index) =>  {
                   return (
                     <button className={`pricing-tab ${pricingPackage === pkg.name && 'active'}`} onClick={() => setPricingPackage(pkg.name)}>{pkg.name}</button>
                   )
                 })}
               </div>
               <div className="pricing-cards">
-              {gig.packages
-                .filter((pkg) => pkg.name === pricingPackage)
-                .map((pkg, index) => (
+              {gig?.packages
+                ?.filter((pkg) => pkg.name === pricingPackage)
+                ?.map((pkg, index) => (
                   <PricingCard key={index} package={pkg} gigData={gig} />
               ))}
               </div>
@@ -200,7 +193,7 @@ const GigPage = () => {
                 <thead>
                   <tr>
                     <th>Package</th>
-                    {gig.packages.map((pkg, index) => (
+                    {gig?.packages?.map((pkg, index) => (
                       <th key={index}>
                         {pkg.name}
                         <div className="package-price">₹{pkg.price}</div>
@@ -209,7 +202,7 @@ const GigPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {gig.compareFeatures.map((feature, index) => (
+                  {gig?.compareFeatures?.map((feature, index) => (
                     <tr key={index}>
                       <td>{feature.name}</td>
                       {gig.packages.map((pkg, i) => (
@@ -221,13 +214,13 @@ const GigPage = () => {
                   ))}
                   <tr>
                     <td>Delivery Time</td>
-                    {gig.packages.map((pkg, i) => (
+                    {gig?.packages?.map((pkg, i) => (
                       <td key={i}>{pkg.deliveryTime} days</td>
                     ))}
                   </tr>
                   <tr className="package-buttons">
                     <td></td>
-                    {gig.packages.map((pkg, i) => (
+                    {gig?.packages?.map((pkg, i) => (
                       <td key={i}>
                         <button className="select-package-btn" onClick={() => window.open(gig.gigURL ?? "https://www.fiverr.com/rank_rancher", "_blank")}>Select</button>
                       </td>

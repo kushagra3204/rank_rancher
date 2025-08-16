@@ -18,7 +18,7 @@ const useCardWidth = () => {
     if (width <= 1026) return 492
     if (width >= 1300) return 434
     else if (width >= 1400) return 462
-    return 406
+    return 386
   }
 
   useEffect(() => {

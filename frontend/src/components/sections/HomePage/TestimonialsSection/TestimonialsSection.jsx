@@ -1,88 +1,15 @@
 import { useState, useEffect, useRef } from "react"
 import SectionHeading from "../SectionHeading/SectionHeading"
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+// import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import TestimonialCard from "../../../cards/TestimonialCard/TestimonialCard"
 import useCardWidth from "../../../../hooks/useCardWidth";
 import "./TestimonialsSection.css"
 import { getAllTestimonialsAPI } from "../../../../api/testimonialAPIs/getAllTestimonialsApi";
 
 const TestimonialsSection = () => {
-  // const testimonials = [
-  //   {
-  //     id: 1,
-  //     name: "David R.",
-  //     position: "CEO, Finance Solutions",
-  //     content:
-  //       '"Working with them has transformed our entire strategy. Their insights have been invaluable, and we\'ve performed well at every step of the way."',
-  //     rating: 5,
-  //     image: "/images/testimonial-1.jpg",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Sarah L.",
-  //     position: "CFO, TechGrowth",
-  //     content:
-  //       '"Their recommendations gave us smart insights and real results. Our business grew 30% since implementing their recommendations."',
-  //     rating: 5,
-  //     image: "/images/testimonial-2.jpg",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Jason T.",
-  //     position: "Marketing Director, Elevation Growth",
-  //     content:
-  //       '"From day one, they understood our challenges and delivered solutions that worked. Highly recommended!"',
-  //     rating: 5,
-  //     image: "/images/testimonial-3.jpg",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Michael P.",
-  //     position: "COO, Innovative Solutions",
-  //     content:
-  //       '"Their strategic approach and attention to detail have made a significant impact on our business growth. Exceptional service!"',
-  //     rating: 5,
-  //     image: "/images/testimonial-4.jpg",
-  //   },{
-  //     id: 5,
-  //     name: "David R.",
-  //     position: "CEO, Finance Solutions",
-  //     content:
-  //       '"Working with them has transformed our entire strategy. Their insights have been invaluable, and we\'ve performed well at every step of the way."',
-  //     rating: 5,
-  //     image: "/images/testimonial-1.jpg",
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Sarah L.",
-  //     position: "CFO, TechGrowth",
-  //     content:
-  //       '"Their recommendations gave us smart insights and real results. Our business grew 30% since implementing their recommendations."',
-  //     rating: 5,
-  //     image: "/images/testimonial-2.jpg",
-  //   },
-  //   {
-  //     id: 7,
-  //     name: "Jason T.",
-  //     position: "Marketing Director, Elevation Growth",
-  //     content:
-  //       '"From day one, they understood our challenges and delivered solutions that worked. Highly recommended!"',
-  //     rating: 5,
-  //     image: "/images/testimonial-3.jpg",
-  //   },
-  //   {
-  //     id: 8,
-  //     name: "Michael P.",
-  //     position: "COO, Innovative Solutions",
-  //     content:
-  //       '"Their strategic approach and attention to detail have made a significant impact on our business growth. Exceptional service!"',
-  //     rating: 5,
-  //     image: "/images/testimonial-4.jpg",
-  //   },
-  // ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(3)
+  const [visibleCount] = useState(3)
   const [testimonials, setTestimonials] = useState([])
   const carouselRef = useRef(null)
   const intervalRef = useRef(null)
@@ -111,7 +38,7 @@ const TestimonialsSection = () => {
         clearInterval(intervalRef.current)
       }
     }
-  }, [currentIndex, visibleCount])
+  }, [currentIndex, visibleCount, testimonials])
 
   // // Reset interval when manually sliding
   const resetInterval = () => {
